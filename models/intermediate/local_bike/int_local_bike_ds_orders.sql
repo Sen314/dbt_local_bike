@@ -1,6 +1,7 @@
 WITH total_per_orders AS (
     SELECT
         oitem.order_id,
+        SUM(oitem.quantity) AS qty_per_order,
         COUNT(oitem.product_id) AS nb_distinct_product,
         SUM(oitem.list_price * oitem.quantity) AS amount_without_discount,
         SUM((oitem.list_price * oitem.quantity) * oitem.discount ) AS discount_amount
@@ -21,6 +22,7 @@ SELECT
     total.nb_distinct_product,
     total.amount_without_discount,
     total.discount_amount,
+    total.qty_per_order,
     (total.amount_without_discount - total.discount_amount) AS amount_with_discount
 FROM
     {{ref("stg_local_bike_ds_t_orders")}} AS orders
