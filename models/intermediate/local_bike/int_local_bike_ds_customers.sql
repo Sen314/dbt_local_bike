@@ -1,0 +1,12 @@
+SELECT
+    customer_id,
+    first_name,
+    last_name,
+    phone,
+    email,
+    street,
+    city,
+    state,
+    zip_code
+FROM
+    {{ref("stg_local_bike_ds_t_customers")}}
