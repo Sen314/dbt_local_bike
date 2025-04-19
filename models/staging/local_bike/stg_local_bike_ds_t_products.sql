@@ -1,0 +1,10 @@
+SELECT
+    product_id,
+    product_name,
+    brand_id,
+    category_id,
+    model_year,
+    list_price,
+    partition_date
+FROM
+    {{source("local_bike_ds","t_products")}}
