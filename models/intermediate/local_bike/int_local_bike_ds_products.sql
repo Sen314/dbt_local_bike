@@ -13,6 +13,11 @@ WITH product_stocks AS (
 SELECT
     pdt.product_id,
     pdt.brand_id,
+    pdt.product_name,
+    pdt.category_id,
+    pdt.model_year,
+    pdt.list_price,
+    pdt.partition_date
     --paps.store_id,
     paps.nb_product_stocked
 FROM

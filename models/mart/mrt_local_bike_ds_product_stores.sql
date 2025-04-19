@@ -1,0 +1,1 @@
+--product sold compare to stock
