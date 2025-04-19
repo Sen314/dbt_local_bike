@@ -13,13 +13,12 @@ total_order_per_store AS (
     SELECT
         stores.store_id,
         COUNT(DISTINCT orders.order_id) AS nb_orders,
-        SUM(products.list_price) AS total_amount_store,
+        SUM(oitem.list_price) AS total_amount_store,
         SUM(oitem.quantity) AS total_qty_store
     FROM
         {{ ref("stg_local_bike_ds_t_stores") }} AS stores
         LEFT JOIN {{ ref("stg_local_bike_ds_t_orders") }} AS orders ON orders.store_id = stores.store_id
         LEFT JOIN {{ ref("stg_local_bike_ds_t_order_items") }} AS oitem ON oitem.order_id = orders.order_id
-        LEFT JOIN {{ ref("stg_local_bike_ds_t_products") }} AS products ON oitem.product_id = products.product_id
     GROUP BY
         stores.store_id
 )
