@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: local_bike_ds
+    schema: local_bike_ds
+    tables:
+      - name: t_brand
+      - name: t_categories
+      - name: t_customers
+      - name: t_order_items
+      - name: t_orders
+      - name: t_products
+      - name: t_staffs
+      - name: t_stocks
+      - name: t_stores
