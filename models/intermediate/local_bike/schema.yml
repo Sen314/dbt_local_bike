@@ -1,0 +1,72 @@
+models:
+  - name: int_local_bike_ds_brands
+    description: '{{ doc("int_local_bike_ds_brands") }}'
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_categories
+    description: '{{ doc("int_local_bike_ds_categories") }}'
+    columns:
+      - name: category_id
+        description: "Primary key, unique identifier for each category."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_customers
+    description: '{{ doc("int_local_bike_ds_customers") }}'
+    columns:
+      - name: customer_id
+        description: "Primary key, unique identifier for each customers."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_order_items
+    description: '{{ doc("int_local_bike_ds_order_items") }}'
+    columns:
+      - name: oitem_id
+        description: "Primary key, unique identifier for each order_item it's a combination of order_id item_id and product_id."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_orders
+    description: '{{ doc("int_local_bike_ds_orders") }}'
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each order."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_products
+    description: '{{ doc("int_local_bike_ds_products") }}'
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_staffs
+    description: '{{ doc("int_local_bike_ds_staffs") }}'
+    columns:
+      - name: staff_id
+        description: "Primary key, unique identifier for each staff member."
+        tests:
+            - unique
+            - not_null
+
+  - name: int_local_bike_ds_stores
+    description: '{{ doc("int_local_bike_ds_stores") }}'
+    columns:
+      - name: store_id
+        description: "FK to stg_local_bike_ds_t_stores."
+        tests:
+            - unique
+            - not_null
