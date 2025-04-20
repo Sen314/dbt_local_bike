@@ -18,11 +18,16 @@ This model provides a report of order per month by seller and stores
 {% docs mrt_local_bike_ds_product_stores %}
 
 This model provides a list of products, the global quantity stored across all stores and for each stores
+the column after **nb_product_stocked** are the stores name which will update automatically if more store are added in t_stores
 
 {% enddocs %}
 
 {% docs mrt_local_bike_ds_stores_orders %}
 
 This model provides a report of stores and their sales figures per year
+- **nb_orders**: The total number of order for a specific store.
+- **total_qty_store**: The quantity of items sold by a specific store.
+- **total_amount_store**: The Sales revenue across all years for a store.
+- the columns following those are the sales revenu per years
 
 {% enddocs %}
