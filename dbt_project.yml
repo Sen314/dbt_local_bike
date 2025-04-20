@@ -36,6 +36,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+  +persist_docs:
+      relation: true
+      columns: true
+      
   dbt_local_bike:
     # Applies to all files under models/example/
     staging:

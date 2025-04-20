@@ -1,3 +1,5 @@
+version: 2
+
 models:
   - name: int_local_bike_ds_brands
     description: '{{ doc("int_local_bike_ds_brands") }}'
