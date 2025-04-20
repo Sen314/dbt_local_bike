@@ -1,0 +1,18 @@
+models:
+  - name: mrt_local_bike_ds_stores_orders
+    description: '{{ doc("mrt_local_bike_ds_stores_orders") }}'
+    columns:
+      - name: store_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+            - unique
+            - not_null
+
+  - name: mrt_local_bike_ds_customer_orders
+    description: '{{ doc("mrt_local_bike_ds_customer_orders") }}'
+    columns:
+      - name: customer_id
+        description: "Primary key, unique identifier for each customer."
+        tests:
+            - unique
+            - not_null

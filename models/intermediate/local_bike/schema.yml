@@ -52,6 +52,8 @@ models:
         tests:
             - unique
             - not_null
+      - name: product_name
+        description: "Product Name"
 
   - name: int_local_bike_ds_staffs
     description: '{{ doc("int_local_bike_ds_staffs") }}'
