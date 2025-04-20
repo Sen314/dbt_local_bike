@@ -1,3 +1,5 @@
+version: 2
+
 models:
   - name: mrt_local_bike_ds_customer_orders
     description: '{{ doc("mrt_local_bike_ds_customer_orders") }}'
@@ -11,11 +13,9 @@ models:
   - name: mrt_local_bike_ds_order_monthly_report
     description: '{{ doc("mrt_local_bike_ds_order_monthly_report") }}'
     columns:
-      - name: order_id
-        description: "Primary key, unique identifier for each order."
-        tests:
-            - unique
-            - not_null
+      - name: reporting_date
+        description: "the column containing the month on which the report is based"
+
 
   - name: mrt_local_bike_ds_product_stores
     description: '{{ doc("mrt_local_bike_ds_product_stores") }}'
