@@ -1,11 +1,10 @@
 select
-    pdt.product_id,
+    stocks.product_id,
     pdt.brand_id,
     pdt.product_name,
     pdt.category_id,
     pdt.model_year,
     pdt.list_price,
-    pdt.partition_date,
     pdt.nb_product_stocked,
     {{
         dbt_utils.pivot(
@@ -15,13 +14,13 @@ select
         )
     }}
 from {{ ref("int_local_bike_ds_stocks") }} AS stocks
-INNER JOIN {{ ref("int_local_bike_ds_products")}} AS pdt ON pdt.product_name = stocks.product_name
+INNER JOIN {{ ref("int_local_bike_ds_products")}} AS pdt ON pdt.product_id = stocks.product_id
 group by 
-    pdt.product_id,
+    stocks.product_id,
     pdt.brand_id,
     pdt.product_name,
     pdt.category_id,
     pdt.model_year,
     pdt.list_price,
-    pdt.partition_date,
     pdt.nb_product_stocked
+

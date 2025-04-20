@@ -1,8 +1,7 @@
 SELECT
     stores.store_name,
-    pdt.product_name,
+    stocks.product_id,
     quantity
 FROM
-    {{source("local_bike_ds", "t_stocks")}} AS stocks
-    INNER JOIN {{source("local_bike_ds", "t_products")}} AS pdt ON pdt.product_id = stocks.product_id
-    INNER JOIN {{source("local_bike_ds", "t_stores")}} AS stores ON stores.store_id = stocks.store_id
+    {{ ref("stg_local_bike_ds_t_stocks") }} AS stocks
+    INNER JOIN {{ ref("stg_local_bike_ds_t_stores") }} AS stores ON stores.store_id = stocks.store_id
