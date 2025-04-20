@@ -1,13 +1,4 @@
 models:
-  - name: mrt_local_bike_ds_stores_orders
-    description: '{{ doc("mrt_local_bike_ds_stores_orders") }}'
-    columns:
-      - name: store_id
-        description: "Primary key, unique identifier for each brand."
-        tests:
-            - unique
-            - not_null
-
   - name: mrt_local_bike_ds_customer_orders
     description: '{{ doc("mrt_local_bike_ds_customer_orders") }}'
     columns:
@@ -16,3 +7,34 @@ models:
         tests:
             - unique
             - not_null
+
+  - name: mrt_local_bike_ds_order_monthly_report
+    description: '{{ doc("mrt_local_bike_ds_order_monthly_report") }}'
+    columns:
+      - name: order_id
+        description: "Primary key, unique identifier for each order."
+        tests:
+            - unique
+            - not_null
+
+  - name: mrt_local_bike_ds_product_stores
+    description: '{{ doc("mrt_local_bike_ds_product_stores") }}'
+    columns:
+      - name: product_id
+        description: "Primary key, unique identifier for each product."
+        tests:
+            - unique
+            - not_null
+
+
+  - name: mrt_local_bike_ds_stores_orders
+    description: '{{ doc("mrt_local_bike_ds_stores_orders") }}'
+    columns:
+      - name: store_id
+        description: "Primary key, unique identifier for each store."
+        tests:
+            - unique
+            - not_null
+
+
+
