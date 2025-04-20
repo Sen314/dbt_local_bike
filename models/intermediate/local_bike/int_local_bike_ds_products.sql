@@ -1,7 +1,6 @@
 WITH product_stocks AS (
     SELECT
         stocks.product_id,
-        --stocks.store_id,
         SUM(stocks.quantity) AS nb_product_stocked
     FROM
         {{ ref("stg_local_bike_ds_t_stocks") }} AS stocks
@@ -17,7 +16,6 @@ SELECT
     pdt.model_year,
     pdt.list_price,
     pdt.partition_date,
-    --paps.store_id,
     paps.nb_product_stocked
 FROM
     {{ ref("stg_local_bike_ds_t_products") }} AS pdt

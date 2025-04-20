@@ -1,4 +1,4 @@
-fav_product AS (
+WITH fav_product AS (
     SELECT
         orders.customer_id,
         oitem.product_id AS favorite_product_id
